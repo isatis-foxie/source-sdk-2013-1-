@@ -9,6 +9,7 @@ src = [str(file) for file in Path('src').rglob('*') if file.is_file()]
 for thin in game:
     doRemove = False
 
+
     if thin.endswith(".pdb"):
         doRemove = True
 
@@ -75,8 +76,16 @@ for thin in src:
         os.remove(thin)
 
 dirs = [
+    "game\\platform",
+    "game\\tf\\maps",
+    "game\\tf\\materials",
+    "game\\tf\\replay",
+    "game\\tf\\sound",
+    "game\\tf\\sound_workshop",
     "src\\game\\server\\Debug_tf",
     "src\\game\\server\\Release_tf"
 ]
 
-shutil.rmtree("src\\game\\server\\Release_tf")
+for dir in dirs:
+    if os.path.exists(dir):
+        shutil.rmtree(dir)
