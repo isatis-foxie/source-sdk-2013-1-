@@ -19,6 +19,14 @@ for thin in game:
 
     if thin == "game\\steam_appid.txt":
         doRemove = True
+    if thin == "game\\tf\\GameState.txt":
+        doRemove = True
+    if thin == "game\\tf\\stats.txt":
+        doRemove = True
+    if thin == "game\\tf\\voice_ban.dt":
+        doRemove = True
+    if thin == "game\\tf\\modelsounds.cache":
+        doRemove = True
         
 
     if doRemove:
@@ -76,6 +84,7 @@ for thin in src:
         os.remove(thin)
 
 dirs = [
+    "src\\.vs",
     "game\\platform",
     "game\\tf\\maps",
     "game\\tf\\materials",
